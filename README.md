@@ -38,6 +38,8 @@ Interday Meeting Scheduling:
 Online room meeting scheduling
 
 #Setup Guide
+unzip the MeetingManager.zip file
+import the maven project to IDE
 update the datasource details in yml file. (src/main/resources/application-dev.yml)
 create the below tables (provided scripts are for postgres DB)
 
