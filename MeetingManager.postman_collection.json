@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "1a791f23-0ec6-439f-a994-fc9b9e80037f",
+		"name": "MeetingManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RegisterNewUser(To Register New User in System)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"test2\",\r\n    \"password\":\"test#123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/MeetingManager/meeting/addUser",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"MeetingManager",
+						"meeting",
+						"addUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterNewRoom(To Add New Meeting Room of office)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "RoomNo3",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/MeetingManager/meeting/addMeetingRoom",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"MeetingManager",
+						"meeting",
+						"addMeetingRoom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AvailableRoomsForSlot(To get the Free Meeting room based on Time)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\":\"2024-10-12\",\r\n    \"inTime\":\"11:00\",\r\n    \"outTime\":\"12:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/MeetingManager/meeting/availableRooms",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"MeetingManager",
+						"meeting",
+						"availableRooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetRoomsBookedSlot(Fetch all the booked slot with room name)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8080/MeetingManager/meeting/getBookedRoomsDetails",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"MeetingManager",
+						"meeting",
+						"getBookedRoomsDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AvailableUsersForSlot(To get available user for given time slot)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\":\"2024-09-30\",\r\n    \"inTime\":\"11:00\",\r\n    \"outTime\":\"12:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/MeetingManager/meeting/availableUser",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"MeetingManager",
+						"meeting",
+						"availableUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserBookedSlots(Fetch all the booked slot with user name)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8080/MeetingManager/meeting/getBusyUserDetails",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"MeetingManager",
+						"meeting",
+						"getBusyUserDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OneToOne(To Schedule the one to one meeting)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"date\":\"2024-10-12\",\r\n\"inTime\":\"11:30\",\r\n\"outTime\":\"12:30\",\r\n\"organizer\":\"Test1\",\r\n\"attendee\":\"Test2\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/MeetingManager/meeting/oneToOneMeeting",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"MeetingManager",
+						"meeting",
+						"oneToOneMeeting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OfflineRoomMeeting (To schedule the offline room meeting with group of people)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"date\":\"2024-10-12\",\r\n\"inTime\":\"11:30\",\r\n\"outTime\":\"12:15\",\r\n\"organizer\":\"Test4\",\r\n\"roomName\":\"RoomNo1\",\r\n\"userList\": [\r\n \"Test1\",\r\n \"Test2\"\r\n]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/MeetingManager/meeting/roomMeeting",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"MeetingManager",
+						"meeting",
+						"roomMeeting"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
